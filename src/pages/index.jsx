@@ -5,6 +5,7 @@ export default ({ data }) => {
   return (
     <div>
       {items.map(({ node }) => {
+        const imagePath = `images/${node.image}`;
         return (
           <div
             key={node.title}
@@ -16,11 +17,9 @@ export default ({ data }) => {
               border: "1px solid black"
             }}
           >
-            <img
-              width="100%"
-              src={`images/${node.image}`}
-              alt={node.title}
-            />
+            <a href={imagePath}>
+              <img width="100%" src={imagePath} alt={node.title} />
+            </a>
             <h3>{node.title}</h3>
             <p>{node.description}</p>
           </div>
